@@ -1,0 +1,21 @@
+`timescale 1ns / 1ps
+
+module InstructionMemory(
+	input InsMemRW,
+	input [31:0] IAddr,
+	output [5:0] op,
+	output [4:0] rs,
+	output [4:0] rt,
+	output [4:0] rd,
+	output [15:0] immediate
+	);
+	
+	reg [7:0] mem[0:63];
+	initial begin
+		$readmemb("im.txt", mem);
+	end
+	
+	assign {op, rs, rt, immediate} = {mem[IAddr], mem[IAddr + 1], mem[IAddr + 2], mem[IAddr + 3]};
+	assign rd = mem[IAddr + 2][7:3];
+	
+endmodule

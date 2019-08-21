@@ -1,0 +1,45 @@
+`timescale 1ns / 1ps
+
+`define ALU_ADD_ 4'b0000
+`define ALU_SUB_ 4'b0001
+`define ALU_SLT_ 4'b0010
+`define ALU_AND_ 4'b0011
+`define ALU_LUI_ 4'b0100
+`define ALU_NOR_ 4'b0101
+`define ALU_OR_  4'b0110
+`define ALU_XOR_ 4'b0111
+`define ALU_SLL_ 4'b1000
+`define ALU_SRA_ 4'b1001
+`define ALU_SRL_ 4'b1010
+
+module ALU(
+	input [3:0] ALUOp,
+	input [31:0] A,
+	input [31:0] B,
+	output reg zero,
+	output reg [31:0] result
+	);
+	
+	always@(ALUOp or A or B) begin
+		case(ALUOp)
+			/* arithmetic */
+			`ALU_ADD_ : result = A + B;
+			`ALU_SUB_ : result = A - B;
+			`ALU_SLT_ : result = (A < B);
+			/* logic */
+			`ALU_AND_ : result = A & B;
+			`ALU_LUI_ : result = {B[15:0], 16'b0};
+			`ALU_NOR_ : result = ~(A | B);
+			`ALU_OR_  : result = A | B;
+			`ALU_XOR_ : result = A ^ B;
+			/* shift */
+			`ALU_SLL_ : result = B << A[4:0];
+			`ALU_SRA_ : result = B >>> A[4:0];
+			`ALU_SRL_ : result = B >> A[4:0];
+			default : result = 32'bx;
+		endcase
+		zero = (result == 32'b0);
+	end
+	
+endmodule
+	

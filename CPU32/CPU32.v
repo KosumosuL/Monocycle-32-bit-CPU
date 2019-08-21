@@ -1,0 +1,52 @@
+`timescale 1ns / 1ps
+
+module CPU32(
+    input CLK,
+    input Reset,
+    output [5:0] op,
+    output [4:0] rs,
+    output [4:0] rt,
+    output [4:0] rd,
+    output [15:0] immediate,
+    output [31:0] ReadData1,
+    output [31:0] ReadData2,
+    output [31:0] WriteData,
+    output DataMemRW,
+    output [31:0] DataOut,
+    output [31:0] OutAddr,
+    output [31:0] result
+    );
+
+    wire [3:0] ALUOp; 
+    wire [31:0] B, InAddr;
+    wire [31:0] OutAddr_4, extended, extended_2, OutAddr_immediate;   
+    wire [4:0] WriteReg;  
+    wire zero, PCSrc, PCWre, ALUSrcB, ALUM2Reg, RegWre, InsMemRW, ExtSel, RegOut;
+
+    ControlUnit cu(op, zero, InsMemRW, PCWre, ExtSel, DataMemRW, ALUM2Reg, ALUSrcB, PCSrc, ALUOp, RegWre, RegOut);
+
+    PC pc(CLK, Reset, PCWre, InAddr, OutAddr);
+
+    InstructionMemory im(InsMemRW, OutAddr, op, rs, rt, rd, immediate);
+
+    RegisterFile rf(CLK, RegWre, rs, rt, WriteReg, WriteData, ReadData1, ReadData2);
+
+    ALU alu(ALUOp, ReadData1, B, zero, result);
+
+    SignZeroExtend sze(ExtSel, immediate, extended);
+
+    DataMemory dm(CLK, DataMemRW, result, ReadData2, DataOut);
+
+    Adder adder1(32'h00000004, OutAddr, OutAddr_4);
+    Adder adder2(OutAddr_4, extended_2, OutAddr_immediate);
+
+    Shifter shifter(extended, 5'b00010, extended_2);
+
+    Multiplexer5 m5(RegOut, rt, rd, WriteReg);
+
+    Multiplexer32 m321(ALUSrcB, ReadData2, extended, B);
+    Multiplexer32 m322(ALUM2Reg, result, DataOut, WriteData);
+    Multiplexer32 m323(PCSrc, OutAddr_4, OutAddr_immediate, InAddr);
+
+
+endmodule

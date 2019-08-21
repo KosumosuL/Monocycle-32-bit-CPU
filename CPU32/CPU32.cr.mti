@@ -1,0 +1,92 @@
+C:/modeltech64_10.4/examples/work/CPU32/CPU32_TEST.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/CPU32_TEST.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module CPU32_TEST
+
+Top level modules:
+	CPU32_TEST
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/CPU32.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/CPU32.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module CPU32
+
+Top level modules:
+	CPU32
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/Adder.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/Adder.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/InstructionMemory.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/InstructionMemory.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module InstructionMemory
+
+Top level modules:
+	InstructionMemory
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/RegisterFile.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/RegisterFile.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/Shifter.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/Shifter.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Shifter
+
+Top level modules:
+	Shifter
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/Multiplexer32.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/Multiplexer32.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Multiplexer32
+
+Top level modules:
+	Multiplexer32
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/Multiplexer5.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/Multiplexer5.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Multiplexer5
+
+Top level modules:
+	Multiplexer5
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/ControlUnit.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/ControlUnit.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ControlUnit
+
+Top level modules:
+	ControlUnit
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/SignZeroExtend.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/SignZeroExtend.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module SignZeroExtend
+
+Top level modules:
+	SignZeroExtend
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/ALU.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/ALU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/DataMemory.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/DataMemory.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module DataMemory
+
+Top level modules:
+	DataMemory
+
+} {} {}} C:/modeltech64_10.4/examples/work/CPU32/PC.v {1 {vlog -work work -vopt -stats=none C:/modeltech64_10.4/examples/work/CPU32/PC.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}}
