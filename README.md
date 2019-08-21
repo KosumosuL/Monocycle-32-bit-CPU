@@ -1,2 +1,5 @@
 # Monocycle-32-bit-CPU
-Modelsim-10.4
+Verilog   
+Modelsim-10.4     
+<br><br><br><br><br><br>
+![cpu32](https://github.com/xiqi98/Monocycle-32-bit-CPU/blob/master/img/CPU.png)
